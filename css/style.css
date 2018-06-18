@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+body {
+	font-size: 100%;
+	font-family: 'Oxygen', sans-serif;
+	margin: 0em;
+	padding: 0em;
+	background-color: rgb(50, 50, 50); 
+}
+
+header {
+	color: rgba(200, 200, 200, 0.9);
+	background-color: rgba(100, 100, 100, 0.5); 
+}
+
+h1, h2 {
+	margin: 0em;
+	/*padding-bottom: 0.2em;*/
+	text-align: center;
+}
+
+h1 {
+	padding-top: 0.25em;
+	font-size: 4em;
+}
+
+h2 {
+	padding-bottom: 1em;
+}
+
+input {
+	border: 0em;
+	margin: 0em;
+	padding: 0em;
+	color: rgba(200, 200, 200, 0.9);
+	background-color: rgb(50, 50, 50);
+	text-align: center;
+	font-size: 2em;
+	width: 100%;
+	box-sizing: border-box;
+	display: block;
+}
+
