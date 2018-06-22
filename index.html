@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="@the.desert.eagle">
 	<meta name="description" content="remote control to personal server">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Remote SysCtrl</title>
 </head>
 <body>
@@ -16,12 +16,14 @@
 	<section>
 		<div class="space-container"></div>
 		<form>
-			<input type="text" name="username" placeholder="username" autofocus>
-			<input type="password" name="password" placeholder="password">
+			<input type="text" name="username" placeholder="username" onkeyup="checkFormValidity()" autofocus>
+			<input type="password" name="password" placeholder="password" onkeyup="checkFormValidity()">
+			<strong id="submit-symbol">&crarr;</strong>
 		</form>
 		<div class="space-container"></div>
 	</section>
 	<footer>
+	<script src="js/formSubmit.js" type="text/javascript"></script> <!--Chrome Bug: Add atleast an empty <script> to avoid transitions starting on page load -->
 		<p>@.the.desert.eagle</p>
 	</footer>
 </body>
