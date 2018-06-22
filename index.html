@@ -10,15 +10,15 @@
 </head>
 <body>
 	<header>
-		<h1>Remote SysCtrl</h1>
+		<h1>Remote Sys<span id="ctrl">&nbsp;Ctrl&nbsp;&nbsp;&nbsp;</span></h1>
 		<h2>a mobile server controller</h2>
 	</header>
 	<section>
 		<div class="space-container"></div>
 		<form>
-			<input type="text" name="username" placeholder="username" onkeyup="checkFormValidity()" autofocus>
-			<input type="password" name="password" placeholder="password" onkeyup="checkFormValidity()">
-			<strong id="submit-symbol">&crarr;</strong>
+			<input type="text" name="username" placeholder="username" onkeyup="checkFormStatus(event)" autofocus>
+			<input type="password" name="password" placeholder="password" onkeyup="checkFormStatus(event)">
+			<div id="submit-symbol-container"> <strong id="submit-symbol">&crarr;</strong> </div>
 		</form>
 		<div class="space-container"></div>
 	</section>
