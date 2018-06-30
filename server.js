@@ -1,6 +1,7 @@
 // Module Imports
 const express = require('express');
 const hbs = require('hbs');
+const fs = require('fs');
 
 // Creating Express App
 var app = express();
@@ -8,18 +9,33 @@ var app = express();
 // Setting Handlebars as View Engine 
 app.set('view engine', 'hbs');
 
-// Serving Static Content in Public Dircetory
+// Middleware Serving Static Content in Public Dircetory
 app.use(express.static(__dirname + '/public'));
 
-// GET Route-Requests
+// Middleware Logging User Requests on Server End
+app.use((req, res, next) => {
+	var dateTime = new Date().toString();
+	var logMsg = `${dateTime} :: ${req.method} :: ${req.url}`; 
+	console.log(logMsg);
+	fs.appendFile('server.log', logMsg + '\n', (err) => {
+		if (err){
+			console.log('<ERROR> \'server.log\' could not be updated');
+		}
+	});
+	next();
+});
+
+// GET Route-Requests Handling
 app.get('/', (req, res) => {
 	res.sendFile('views/index.html', {root: __dirname}, (err) => {
 		if (err){
-			console.log('<ERROR> \'index.html\' file error detected')
+			console.log('<ERROR> \'index.html\' could not be sent')
 		}
 	});
 });
 
+
+// Listening for Requests on Port 3000 
 app.listen(3000, () => {
 	console.log('|SUCCESS| Server running on port 3000');
 });
