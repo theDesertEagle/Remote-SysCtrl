@@ -1,0 +1,5 @@
+# Ignore Node Modules that can be installed using 'NPM INSTALL' Command
+node_modules/ 
+
+# Ignore local Server Logs
+server.log
