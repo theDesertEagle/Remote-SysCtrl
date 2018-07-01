@@ -1,5 +1,6 @@
 var submitSymbol = document.getElementById('submit-symbol');
 var inputFields = document.getElementsByTagName('input');
+var loginForm = document.getElementById('login-form');
 var formFilled = false;
 var keyCode = null;
 
@@ -29,6 +30,7 @@ function checkFormStatus(event){
 		formFilled = false; 		
 	}
 	if (formFilled == true && keyCode == 13){
-		alert("route to server selection page");		
+		loginForm.submit();
+		console.log("|SUCCESS| Form submitted");			
 	}
 }

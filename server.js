@@ -3,7 +3,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-// Creating Express App
+// Environment Variables
+var PORT = process.env.PORT || 3000;
+
+// Creating Express App and Port Var
 var app = express();
 
 // Setting Handlebars as View Engine 
@@ -34,8 +37,12 @@ app.get('/', (req, res) => {
 	});
 });
 
+app.post('/dashboard', (req, res) => {
+	res.send('|SUCCESS| Form received without validation');
+});
+
 
 // Listening for Requests on Port 3000 
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log('|SUCCESS| Server running on port 3000');
 });
