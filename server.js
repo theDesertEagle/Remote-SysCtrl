@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/dashboard', (req, res) => {
-	res.send('|SUCCESS| Form received without validation');
+	res.send('|SUCCESS| Form received with basic validation');
 });
 
 

@@ -11,7 +11,20 @@ function areInputFieldsFilled() {
 	return false;
 }
 
-function checkFormStatus(event){
+function validFormData() {
+	var userName = inputFields[0].value;
+	if (userName.length < 1 || userName.length > 15) { //min-max length test
+		alert('Please ensure that your username is 1 to 15 characters long');
+		return false;
+	}
+	if (/[^a-zA-Z0-9_]/g.test(userName)){ //underscore-alphanumberic username test
+		alert('Please ensure that your username consists of alphabets, numbers or underscores');
+		return false;		
+	}
+	return true;
+}
+
+function checkFormStatus(event) {
 	console.log(event.target);
 
 	keyCode = event.which || event.keyCode; //event.which used to support Firefox browser compatibility,
@@ -29,7 +42,7 @@ function checkFormStatus(event){
 		submitSymbol.style.left = "3rem";
 		formFilled = false; 		
 	}
-	if (formFilled == true && keyCode == 13){
+	if (formFilled == true && keyCode == 13 && validFormData()){
 		loginForm.submit();
 		console.log("|SUCCESS| Form submitted");			
 	}
