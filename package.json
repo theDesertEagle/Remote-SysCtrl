@@ -4,6 +4,7 @@
   "description": "a mobile controller for remote servers",
   "main": "server.js",
   "scripts": {
+    "sass": "node-sass -w public/scss -o public/css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/theDesertEagle/Remote-SysCtrl#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "node-sass": "^4.9.2"
   }
 }

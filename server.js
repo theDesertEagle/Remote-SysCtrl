@@ -12,6 +12,9 @@ var app = express();
 // Setting Handlebars as View Engine 
 app.set('view engine', 'hbs');
 
+// Enabling Handlebars Partials
+hbs.registerPartials(__dirname + '/views/partials'); 
+
 // Middleware Serving Static Content in Public Dircetory
 app.use(express.static(__dirname + '/public'));
 
@@ -28,7 +31,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-// GET Route-Requests Handling
+// GET, POST Route-Requests Handling
 app.get('/', (req, res) => {
 	res.sendFile('views/index.html', {root: __dirname}, (err) => {
 		if (err){
@@ -38,9 +41,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/dashboard', (req, res) => {
-	res.send('|SUCCESS| Form received with basic validation');
+	// res.send('|SUCCESS| Form received with basic validation');
+	res.render('dashboard.hbs', {});
 });
-
 
 // Listening for Requests on Port 3000 
 app.listen(PORT, () => {

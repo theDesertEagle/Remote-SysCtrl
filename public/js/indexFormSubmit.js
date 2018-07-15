@@ -1,23 +1,23 @@
 var submitSymbol = document.getElementById('submit-symbol');
-var inputFields = document.getElementsByTagName('input');
+var userName = document.getElementById('username'); 
+var password = document.getElementById('password');
 var loginForm = document.getElementById('login-form');
 var formFilled = false;
 var keyCode = null;
 
 function areInputFieldsFilled() {
-	if (inputFields[0].value != "" && inputFields[1].value != ""){
+	if (userName.value != "" && password.value != ""){
 		return true;
 	}
 	return false;
 }
 
 function validFormData() {
-	var userName = inputFields[0].value;
-	if (userName.length < 1 || userName.length > 15) { //min-max length test
+	if (userName.value.length < 1 || userName.value.length > 15) { //min-max length test
 		alert('Please ensure that your username is 1 to 15 characters long');
 		return false;
 	}
-	if (/[^a-zA-Z0-9_]/g.test(userName)){ //underscore-alphanumberic username test
+	if (/[^a-zA-Z0-9_]/g.test(userName.value)){ //underscore-alphanumberic username test
 		alert('Please ensure that your username consists of alphabets, numbers or underscores');
 		return false;		
 	}

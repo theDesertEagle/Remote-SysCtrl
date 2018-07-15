@@ -99,6 +99,7 @@ input {
 	display: block;
 	outline: none;
 	border: 0rem;
+	border-radius: 0.4rem;
 	margin: 0rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -109,8 +110,15 @@ input {
 }
 
 input:focus {
+	position: relative;
 	color: rgba(241, 243, 242, 0.8);	
-	background-color: rgba(156, 120, 93, 0.9);
+	/*background-color: rgba(156, 120, 93, 0.9);*/
+	/*background-color: rgba(222, 178, 142, 0.8);*/
+	/*background-color: rgba(228, 177, 135, 0.8);*/
+	background-color: rgba(231, 168, 115, 0.9);
+	/*background-color: rgba(204, 155, 114, 0.8);*/
+	/*background-color: rgba(195, 181, 169, 0.85);*/
+	box-shadow: 0.5rem 0.5rem 3rem rgb(180, 180, 180, 0.8), 0.5rem -0.5rem 3rem rgb(180, 180, 180, 0.8);
 }
 
 /*placeholder browser compatibility.*/
@@ -154,12 +162,40 @@ input:focus:-ms-input-placeholder {
 input:focus::-ms-input-placeholder {
 	color: rgba(241, 243, 242, 0.9);
 }
+/*
+form {
+	position: relative;
+}*/
 
 .space-container {
 	width: 100%;
 	height: 25vh;
 	overflow: hidden;
 }
+
+/*.round-bordered-container {
+	display: inline-block;
+*//*	position: relative;
+float: center;
+	/*z-index: -1;*/
+/*}*/
+/*.round-bordered-container {
+
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	top: -2.2rem;
+*/	/*top: -1rem;*/
+/*	left: 0;
+	right: 0;
+	background-color: rgba(250,250,250,0);
+	height: 2rem;
+	width: 20%;
+}
+
+#rbc-left {
+	left: -2.2rem;
+}*/
 
 #submit-symbol-container {
 	position: absolute;
@@ -192,3 +228,46 @@ input:focus::-ms-input-placeholder {
 	border-bottom: 0.4rem solid rgba(180, 180, 180, 0.9);
 	border-radius: 0.5rem;
 }
+
+/*#error-container {
+	position: relative;
+}
+
+#message-container {
+	text-align: center;
+	position: relative;
+}
+
+#validation-error-message {
+	display: inline-block;
+	padding: 1rem;
+	float: center;
+	background-color: red;
+*/}
+
+/*#error-container {
+	position: relative;
+	text-align: center;
+}
+*/
+/*#message-container {
+	/*display: inline-block;*/
+
+	/*Centering trick in CSS*/
+/*	position: absolute;
+	z-index: -1;
+	margin-left: auto;
+	margin-right: auto;
+	top: -2.2rem;
+	top: -1rem;
+	left: 0;
+	right: 0;
+
+	font-size: 1rem;
+	color: rgba(241, 243, 242, 0.9);
+
+	background-color: rgba(227, 115, 115, 0.9);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem; 
+	width: 50%;
+}*/
