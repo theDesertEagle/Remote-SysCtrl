@@ -45,6 +45,10 @@ app.post('/dashboard', (req, res) => {
 	res.render('dashboard.hbs', {});
 });
 
+app.get('/dashboard', (req, res) => {  // Accessing dashboard when clicking on the navbar 
+	res.render('dashboard.hbs', {});
+});
+
 // Listening for Requests on Port 3000 
 app.listen(PORT, () => {
 	console.log('|SUCCESS| Server running on port 3000');

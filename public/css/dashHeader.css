@@ -1,0 +1,99 @@
+@import 'https://fonts.googleapis.com/css?family=Oxygen';
+html, body, ul, ol, h1, h2, header {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 100%;
+  min-height: 100%;
+  /*Avoids grey gap bellow bakground image for mobile devices*/ }
+  html body {
+    font-size: 100%; }
+
+@media only screen and (max-height: 600px) {
+  html {
+    font-size: 70%; } }
+
+@media only screen and (max-height: 400px) {
+  html {
+    font-size: 60%; } }
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 80%; } }
+
+@media only screen and (max-width: 480px) and (max-height: 450px) {
+  html {
+    font-size: 65%; } }
+
+html {
+  font-family: 'Oxygen', sans-serif; }
+
+header {
+  display: block;
+  background-color: rgba(211, 148, 95, 0.9);
+  overflow: hidden; }
+  header #navbar-container #navbar-content {
+    list-style-type: none; }
+    header #navbar-container #navbar-content a {
+      display: inline-block;
+      color: #f5e5d5;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s; }
+      header #navbar-container #navbar-content a:hover {
+        background-color: rgba(231, 168, 115, 0.9); }
+      header #navbar-container #navbar-content a .material-icons {
+        font-size: 1.2rem; }
+    header #navbar-container #navbar-content :not(#logo-container):not(.dropdown-container) a:hover {
+      color: #918375;
+      border-bottom: 0.2rem solid #f5e5d5;
+      margin-top: -0.25rem; }
+    header #navbar-container #navbar-content .navbar-elt-left {
+      float: left; }
+    header #navbar-container #navbar-content .navbar-elt-right {
+      float: right; }
+
+.dropdown-container a:hover {
+  color: #918375;
+  margin-top: -0.25rem; }
+
+.dropdown-container .dropdown-menu {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: all 0.3s; }
+  .dropdown-container .dropdown-menu li {
+    text-align: center; }
+
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  width: 20%;
+  height: auto; }
+  .dropdown-container:hover .dropdown-menu li {
+    background-color: rgba(231, 168, 115, 0.9); }
+
+#content-container {
+  clear: both; }
+
+#logo {
+  display: inline-block;
+  font-size: 1rem;
+  /*3rem*/
+  color: rgba(50, 50, 50, 0.9);
+  text-shadow: rgba(50, 50, 50, 0.5) 0.3rem 0.3rem 0.4rem;
+  font-weight: bold; }
+  #logo #ctrl {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: rgba(50, 50, 50, 0.9);
+    text-shadow: none;
+    background-color: rgba(230, 230, 230, 0.9);
+    border-right: 0.3rem solid rgba(130, 130, 130, 0.9);
+    border-bottom: 0.3rem solid rgba(180, 180, 180, 0.9);
+    border-radius: 0.2rem; }

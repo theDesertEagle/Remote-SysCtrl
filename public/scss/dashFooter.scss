@@ -1,0 +1,38 @@
+@import 'partials/reset';
+@import 'https://fonts.googleapis.com/css?family=Oxygen';
+
+$fs-logo: 1rem;
+$fs-nav-elt: $fs-logo + 0.2rem;
+$pdg-top-bottom-elt: 0.5rem;
+$pdg-left-right-elt: 1rem;
+
+// Color Schemes
+$c-dark: rgba(145, 131, 117, 1);
+$c-medium: rgba(194, 179, 164, 1);
+$c-light: rgba(245, 229, 213, 1);
+$c-highlight: rgba(231, 168, 115, 0.9);
+$c-highlight-dark: rgba(211, 148, 95, 0.9);
+
+body{
+	overflow: hidden;
+}
+
+#content-container{
+	position: relative;
+}
+
+footer{
+	width: 100%;
+	background-color: rgb(50,50,50);
+	color: white;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	padding: 0.5rem;
+	ul{
+		list-style-type: none;
+		li{
+			display: inline-block;
+		}
+	}
+}
