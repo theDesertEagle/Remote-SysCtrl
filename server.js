@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-// GET, POST Route-Requests Handling
+// Route-Requests Handling
 app.get('/', (req, res) => {
 	res.sendFile('views/index.html', {root: __dirname}, (err) => {
 		if (err){
@@ -40,14 +40,13 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.post('/dashboard', (req, res) => {
-	// res.send('|SUCCESS| Form received with basic validation');
-	res.render('dashboard.hbs', {});
-});
-
-app.get('/dashboard', (req, res) => {  // Accessing dashboard when clicking on the navbar 
-	res.render('dashboard.hbs', {});
-});
+app.route('/dashboard')
+	.post((req, res) => { // Submitting the login form data
+		res.render('dashboard.hbs', {});
+	})
+	.get((req, res) => {  // Accessing dashboard when clicking on the navbar 
+		res.render('dashboard.hbs', {});
+	});
 
 // Listening for Requests on Port 3000 
 app.listen(PORT, () => {

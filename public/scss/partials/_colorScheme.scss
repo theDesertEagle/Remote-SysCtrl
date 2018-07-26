@@ -1,0 +1,12 @@
+$colorMap: (
+    'dark': rgba(145, 131, 117, 1),
+    'medium': rgba(194, 179, 164, 1),
+    'light': rgba(245, 229, 213, 1),
+    'highlight': rgba(231, 168, 115, 1),
+    'highlight-dark': rgba(211, 148, 95, 1),
+    'footer': rgb(50,50,50),
+);
+
+@function getColor($color){
+    @return map-get($colorMap, $color)
+}

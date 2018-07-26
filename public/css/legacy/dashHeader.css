@@ -31,52 +31,54 @@ html {
 
 header {
   display: block;
-  background-color: rgba(211, 148, 95, 0.9);
   overflow: hidden; }
   header #navbar-container #navbar-content {
     list-style-type: none; }
+    header #navbar-container #navbar-content li {
+      background-color: #d3945f; }
     header #navbar-container #navbar-content a {
       display: inline-block;
       color: #f5e5d5;
       text-decoration: none;
       font-size: 1.2rem;
       padding: 0.5rem 1rem;
+      border-bottom: 0rem solid #f5e5d5;
+      margin-top: 0;
       transition: all 0.3s; }
       header #navbar-container #navbar-content a:hover {
-        background-color: rgba(231, 168, 115, 0.9); }
+        background-color: #e7a873; }
       header #navbar-container #navbar-content a .material-icons {
         font-size: 1.2rem; }
     header #navbar-container #navbar-content :not(#logo-container):not(.dropdown-container) a:hover {
       color: #918375;
-      border-bottom: 0.2rem solid #f5e5d5;
-      margin-top: -0.25rem; }
+      border-bottom: 0.3rem solid #f5e5d5;
+      margin-top: -0.4rem; }
     header #navbar-container #navbar-content .navbar-elt-left {
       float: left; }
+    header #navbar-container #navbar-content .navbar-elt-center {
+      position: absolute;
+      height: 2.6rem;
+      width: 100%;
+      z-index: -1; }
     header #navbar-container #navbar-content .navbar-elt-right {
       float: right; }
 
-.dropdown-container a:hover {
-  color: #918375;
-  margin-top: -0.25rem; }
+.dropdown-container:hover, .dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  width: 20%;
+  height: auto; }
 
 .dropdown-container .dropdown-menu {
-  display: none;
+  display: block;
   list-style-type: none;
   position: absolute;
   opacity: 0;
   height: 0;
-  width: 0;
-  transition: all 0.3s; }
+  width: 15%;
+  transition: all 0.4s; }
   .dropdown-container .dropdown-menu li {
+    color: #f5e5d5;
     text-align: center; }
-
-.dropdown-container:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  width: 20%;
-  height: auto; }
-  .dropdown-container:hover .dropdown-menu li {
-    background-color: rgba(231, 168, 115, 0.9); }
 
 #content-container {
   clear: both; }

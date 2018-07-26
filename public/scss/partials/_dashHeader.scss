@@ -1,0 +1,245 @@
+@import 'colorScheme';
+
+// Variables
+$fs-logo: 1rem;
+$fs-nav-elt: $fs-logo + 0.2rem;
+$pdg-top-bottom-elt: 0.5rem;
+$pdg-left-right-elt: 1rem;
+
+// Amazing Elevation Trick Using Transition + Margin: 
+// Giving a -ve margin-top with transition makes it feel like as if an element is elevated (with overflow: hidden)
+
+
+header{
+	position: absolute;
+	width: 100%;
+	// background-color: $c-highlight-dark;
+	// box-sizing: border-box;
+	overflow: hidden;
+	// height: $fs-logo + $pdg-top-bottom-elt * 5; //
+	#navbar-container{
+		display: block;
+		// height: $fs-nav-elt + 1rem;
+		#navbar-content{
+			// Removing bullets from Lists
+			list-style-type: none;
+			
+			// Floating navbar <li> elements, dependent on their class
+			.navbar-elt-left{
+				float: left;				
+			}
+			.navbar-elt-center{
+				position: absolute;
+				height: $fs-nav-elt + ($pdg-top-bottom-elt * 2) + 0.4rem;
+				width: 100%;
+				z-index: -1;
+			}
+			.navbar-elt-right{
+				float: right;
+			}
+
+			// Default Behaviour of navbar elements
+			.navbar-elt-left, .navbar-elt-center, .navbar-elt-right{
+				// position: relative;
+				background-color: getColor('highlight-dark');				
+				a{
+					// Animation Logic: border-bottom matches the background-color of the body. Giving the nav-elts a top margin hides the navbar (z-indexed empty portion of the navbar) 
+					// position: absolute;
+					display: inline-block;
+					color: getColor('light');				
+					text-decoration: none;
+					font-size: $fs-nav-elt;	
+					padding: $pdg-top-bottom-elt $pdg-left-right-elt;
+					border-bottom: 0rem solid getColor('light');
+					margin-top: 0;
+					transition: all 0.3s;
+					&:hover{
+						background-color: getColor('highlight');					
+					}
+					// border-top: 0.2rem solid rgba(0,0,0,0);
+					.material-icons{
+						font-size: $fs-nav-elt;
+					}
+				}
+			}
+
+			// All navbar-elements that are not logo containers or dropdown containers in the navbar
+			:not(#logo-container):not(.dropdown-container){
+				a:hover{
+					color: getColor('dark');
+					border-bottom: 0.5rem solid getColor('light'); // Jump Effect
+					// border-bottom: 0.3rem solid $c-light; // Jump Effect
+					margin-top: -0.3rem; //  Jump Effect + To compensate border-width
+					// margin-top: -0.4rem; //  Jump Effect + To compensate border-width
+				}
+			}
+
+			// All navbar-elements that are dropdown-containers
+			.dropdown-container{
+				// a:hover{
+				// 	color: $c-dark;
+				// }
+				&:hover, &:hover .dropdown-menu{
+					// display: block;
+					opacity: 1;
+					width: 20%;
+					height: auto;
+					// li{
+					// 	// display: block;
+					// 	background-color: $c-highlight;
+					// 	// text-align: center;
+					// }
+				}		
+				.dropdown-menu{
+					display: block;
+					// list-style-type: none;
+					position: relative;
+					// width: auto;
+					opacity: 0;
+					height: 0;
+					width: 15%;
+					transition: all 0.4s;
+					li{
+						color: getColor('light');
+						text-align: center;
+					}
+				}				
+			}
+
+		}	
+	}	
+}
+
+
+
+// header{
+// 	position: absolute;
+// 	width: 100%;
+// 	// background-color: $c-highlight-dark;
+// 	// box-sizing: border-box;
+// 	overflow: hidden;
+// 	// height: $fs-logo + $pdg-top-bottom-elt * 5; //
+// 	#navbar-container{
+// 		display: block;
+// 		// height: $fs-nav-elt + 1rem;
+// 		#navbar-content{
+// 			// Removing bullets from Lists
+// 			list-style-type: none;
+			
+// 			// Floating navbar <li> elements, dependent on their class
+// 			.navbar-elt-left{
+// 				float: left;				
+// 			}
+// 			.navbar-elt-center{
+// 				position: absolute;
+// 				height: $fs-nav-elt + ($pdg-top-bottom-elt * 2) + 0.4rem;
+// 				width: 100%;
+// 				z-index: -1;
+// 			}
+// 			.navbar-elt-right{
+// 				float: right;
+// 			}
+
+// 			// Default Behaviour of navbar elements
+// 			.navbar-elt-left, .navbar-elt-center, .navbar-elt-right{
+// 				// position: relative;
+// 				background-color: getColor('highlight-dark');				
+// 				a{
+// 					// Animation Logic: border-bottom matches the background-color of the body. Giving the nav-elts a top margin hides the navbar (z-indexed empty portion of the navbar) 
+// 					// position: absolute;
+// 					display: inline-block;
+// 					color: getColor('light');				
+// 					text-decoration: none;
+// 					font-size: $fs-nav-elt;	
+// 					padding: $pdg-top-bottom-elt $pdg-left-right-elt;
+// 					border-bottom: 0rem solid getColor('light');
+// 					margin-top: 0;
+// 					transition: all 0.3s;
+// 					&:hover{
+// 						background-color: getColor('highlight');					
+// 					}
+// 					// border-top: 0.2rem solid rgba(0,0,0,0);
+// 					.material-icons{
+// 						font-size: $fs-nav-elt;
+// 					}
+// 				}
+// 			}
+
+// 			// All navbar-elements that are not logo containers or dropdown containers in the navbar
+// 			:not(#logo-container):not(.dropdown-container){
+// 				a:hover{
+// 					color: getColor('dark');
+// 					border-bottom: 0.5rem solid getColor('light'); // Jump Effect
+// 					// border-bottom: 0.3rem solid $c-light; // Jump Effect
+// 					margin-top: -0.3rem; //  Jump Effect + To compensate border-width
+// 					// margin-top: -0.4rem; //  Jump Effect + To compensate border-width
+// 				}
+// 			}
+
+// 			// All navbar-elements that are dropdown-containers
+// 			.dropdown-container{
+// 				// a:hover{
+// 				// 	color: $c-dark;
+// 				// }
+// 				&:hover, &:hover .dropdown-menu{
+// 					// display: block;
+// 					opacity: 1;
+// 					width: 20%;
+// 					height: auto;
+// 					// li{
+// 					// 	// display: block;
+// 					// 	background-color: $c-highlight;
+// 					// 	// text-align: center;
+// 					// }
+// 				}		
+// 				.dropdown-menu{
+// 					display: block;
+// 					// list-style-type: none;
+// 					position: relative;
+// 					// width: auto;
+// 					opacity: 0;
+// 					height: 0;
+// 					width: 15%;
+// 					transition: all 0.4s;
+// 					li{
+// 						color: getColor('light');
+// 						text-align: center;
+// 					}
+// 				}				
+// 			}
+
+// 		}	
+// 	}	
+// }
+// CSS Trick: Use opacity + height to give transitions to drop-down menus
+
+
+// Logo Styling
+#logo-container{
+	a{
+		background-color: getColor('highlight');
+		&:hover{
+			background-color: getColor('light');			
+		}
+	}	
+	#logo-text{
+		padding-bottom: 0.25rem;
+		display: inline-block;
+		font-size: $fs-logo; /*3rem*/
+		color: rgba(50, 50, 50, 0.9);
+		text-shadow: rgba(50, 50, 50, 0.5) 0.3rem 0.3rem 0.4rem;
+		font-weight: bold;
+		#ctrl-text{
+			margin-left: 0.5rem; 
+			font-size: $fs-logo;
+			color: rgba(50, 50, 50, 0.9);
+			text-shadow: none;
+			background-color: rgba(230, 230, 230, 0.9);
+			border: {
+				radius: 0.2rem;
+				right: 0.3rem solid rgba(130, 130, 130, 0.9);
+				bottom: 0.3rem solid rgba(180, 180, 180, 0.9);
+			}
+		}
+	}	
+}
